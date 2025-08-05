@@ -29,5 +29,18 @@ function Book(title, author, pages, read)
 }
 
 const bookOne = new Book("Fifa", "Jay Brown", 236, true);
+const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
+const theFifa = new Book("FIFA", "Messi", 300, true);
 
 console.log(bookOne.info());
+
+function addBookToLibrary(book)
+{
+    myLibrary.push(book);
+}
+
+addBookToLibrary(bookOne);
+addBookToLibrary(theHobbit);
+addBookToLibrary(theFifa);
+
+console.log(myLibrary);
