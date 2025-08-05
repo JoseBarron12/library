@@ -47,10 +47,13 @@ console.log(myLibrary);
 
 const bookshelf = document.querySelector(".bookshelf");
 
-for (let i = 0; i < 4; i++)
+for (let i = 1; i < 5; i++)
 {
     const div = document.createElement("div");
     div.classList.add("bookshelf-row");
+    div.setAttribute("id", `${i}`);
 
     bookshelf.appendChild(div);
 }
+
+
