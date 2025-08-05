@@ -44,3 +44,13 @@ addBookToLibrary(theHobbit);
 addBookToLibrary(theFifa);
 
 console.log(myLibrary);
+
+const bookshelf = document.querySelector(".bookshelf");
+
+for (let i = 0; i < 4; i++)
+{
+    const div = document.createElement("div");
+    div.classList.add("bookshelf-row");
+
+    bookshelf.appendChild(div);
+}
