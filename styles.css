@@ -75,4 +75,14 @@ body {
     height: 100%;
     background-image: url(./wood.jpg);
     background-size: contain;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    padding: 16px;
+    gap: 16px;
+}
+
+.bookshelf-row {
+    border: 2px solid #734d2e;
+    box-shadow: black 0px 0px 10px 10px inset;
 }
