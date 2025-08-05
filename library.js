@@ -32,7 +32,6 @@ const bookOne = new Book("Fifa", "Jay Brown", 236, true);
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
 const theFifa = new Book("FIFA", "Messi", 300, true);
 
-console.log(bookOne.info());
 
 function addBookToLibrary(book)
 {
@@ -43,7 +42,6 @@ addBookToLibrary(bookOne);
 addBookToLibrary(theHobbit);
 addBookToLibrary(theFifa);
 
-console.log(myLibrary);
 
 const bookshelf = document.querySelector(".bookshelf");
 
@@ -56,4 +54,14 @@ for (let i = 1; i < 5; i++)
     bookshelf.appendChild(div);
 }
 
+const rows = document.querySelectorAll(".bookshelf-row");
+
+
+for (const book of myLibrary) {
+    const div = document.createElement("div");
+    div.classList.add("book");
+    div.setAttribute("id", `${book.id}`);
+
+    rows[0].appendChild(div);
+}
 
