@@ -61,7 +61,18 @@ small {font-size: 0.600rem; /* 9.6px */}
 }
 
 body {
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 16px;
+    gap: 16px;
+}
+
+.bookshelf {
+    width: min(750px, 100%);
+    height: 100%;
+    background-image: url(./wood.jpg);
+    background-size: contain;
 }
