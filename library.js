@@ -10,6 +10,7 @@ function Book(title, author, pages, read)
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.id = crypto.randomUUID();
     
     if (typeof(read) == "boolean")
     {
@@ -22,6 +23,7 @@ function Book(title, author, pages, read)
     this.info = function()  {
         let message = `${title} by ${author}, ${pages}, `;
         message += (read) ? "read" : "not read yet";
+        message += ` [ID: ${this.id}]`;
         return message;
     };
 }
