@@ -42,6 +42,10 @@ addBookToLibrary(bookOne);
 addBookToLibrary(theHobbit);
 addBookToLibrary(theFifa);
 
+function getRandomColorRGB()
+{
+    return Math.floor(Math.random()* 255);
+}
 
 const bookshelf = document.querySelector(".bookshelf");
 
@@ -61,7 +65,12 @@ for (const book of myLibrary) {
     const div = document.createElement("div");
     div.classList.add("book");
     div.setAttribute("id", `${book.id}`);
-
+    
+    let r = getRandomColorRGB();
+    let g = getRandomColorRGB();
+    let b = getRandomColorRGB();
+    div.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    
     rows[0].appendChild(div);
 }
 
