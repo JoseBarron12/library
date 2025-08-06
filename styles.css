@@ -85,4 +85,10 @@ body {
 .bookshelf-row {
     border: 2px solid #734d2e;
     box-shadow: black 0px 0px 10px 10px inset;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.book {
+    border: 1px solid black;
 }
