@@ -102,7 +102,6 @@ function createBook(bookObject, parent, bookNum)
     createBookTitle(div, bookNum);
     createBookAuthor(bookObject, div);
 
-
     adjustTitleFont(bookObject, document.querySelector(`.title-${bookNum}`), bookNum);
 
 }
@@ -140,3 +139,4 @@ function adjustTitleFont(bookObject, title, bookNum)
         title.appendChild(letter);
     });
 }
+
