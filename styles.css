@@ -97,7 +97,13 @@ body {
     grid-template-rows: 2fr 1fr;
 }
 
-.book > * {
-  border: 1px solid black;
+
+.book-author {
+  border-top: 1px solid black;
+  align-self: flex-end;
+  text-align: center;
 }
 
+.book-title {
+  justify-self: center;
+}
