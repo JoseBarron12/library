@@ -71,6 +71,8 @@ for (let i = 1; i < 5; i++)
 
 const rows = document.querySelectorAll(".bookshelf-row");
 
+let bookNum = 1;
+
 for (const book of myLibrary) {
     const div = document.createElement("div");
     div.classList.add("book");
@@ -96,13 +98,17 @@ for (const book of myLibrary) {
     div.appendChild(title);
     div.appendChild(author);
 
-    let letters = book.title.split('');
+    let titleLetters = book.title.split('');
+    let size = titleLetters.length;
+    let fontSize = (title.offsetHeight) / size;
 
-    letters.forEach(element=> {
+    titleLetters.forEach(element=> {
         const letter = document.createElement("div");
-        letter.classList.add("letter");
+        letter.classList.add(`letter-${bookNum}`);
         letter.textContent = `${element}`;
+        letter.style.fontSize = `${fontSize}px`;
         
         title.appendChild(letter);
     });
+    ++bookNum;
 }

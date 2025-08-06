@@ -92,12 +92,12 @@ body {
 
 .book {
     border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
 }
 
-.book-title {
-    display: flex;
-    flex-direction: column;
+.book > * {
+  border: 1px solid black;
 }
+
