@@ -91,9 +91,18 @@ for (const book of myLibrary) {
     author.textContent = `${book.author}`;
     
     const title = document.createElement("div");
-    title.classList.add("book-title")
-    title.textContent = `${book.title}`;
+    title.classList.add("book-title");
 
     div.appendChild(title);
     div.appendChild(author);
+
+    let letters = book.title.split('');
+
+    letters.forEach(element=> {
+        const letter = document.createElement("div");
+        letter.classList.add("letter");
+        letter.textContent = `${element}`;
+        
+        title.appendChild(letter);
+    });
 }

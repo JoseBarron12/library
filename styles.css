@@ -96,3 +96,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.book-title {
+    display: flex;
+    flex-direction: column;
+}
