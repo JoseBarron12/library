@@ -32,7 +32,6 @@ const bookOne = new Book("Fifa", "Jay Brown", 236, true);
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false);
 const theFifa = new Book("FIFA", "Messi", 300, true);
 
-
 function addBookToLibrary(book)
 {
     myLibrary.push(book);
@@ -52,13 +51,12 @@ function getRandomNumRange(min, max)
     while ( true )
     {
         let num = Math.floor(Math.random() * max);
-        if (num > min)
+        if (num >= min)
         {
             return num;
         }
     }
 }
-
 
 const bookshelf = document.querySelector(".bookshelf");
 
@@ -73,7 +71,6 @@ for (let i = 1; i < 5; i++)
 
 const rows = document.querySelectorAll(".bookshelf-row");
 
-
 for (const book of myLibrary) {
     const div = document.createElement("div");
     div.classList.add("book");
@@ -87,8 +84,14 @@ for (const book of myLibrary) {
     let height = getRandomNumRange(75, 100);
     div.style.height = `${height}%`;
 
-    
     rows[0].appendChild(div);
-}
 
-console.log(getRandomNumRange(9,56));
+    const author = document.createElement("div");
+    author.textContent = `${book.author}`;
+    
+    const title = document.createElement("div");
+    title.textContent = `${book.title}`;
+
+    div.appendChild(title);
+    div.appendChild(author);
+}
