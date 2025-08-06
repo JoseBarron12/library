@@ -71,13 +71,24 @@ for (let i = 1; i < 5; i++)
 
 const rows = document.querySelectorAll(".bookshelf-row");
 
-let bookNum = 1;
+displayBooks();
 
-for (const book of myLibrary) {
+function displayBooks()
+{
+    let bookNum = 1;
+    for (const book of myLibrary) {
+        
+        createBook(book, rows[0], bookNum);
+        ++bookNum;
+    }
+}
+
+function createBook(bookObject, parent, bookNum)
+{
     const div = document.createElement("div");
     div.classList.add("book");
-    div.setAttribute("id", `${book.id}`);
-    
+    div.setAttribute("id", `${bookObject.id}`);
+        
     let r = getRandomColorRGB();
     let g = getRandomColorRGB();
     let b = getRandomColorRGB();
@@ -86,19 +97,37 @@ for (const book of myLibrary) {
     let height = getRandomNumRange(75, 100);
     div.style.height = `${height}%`;
 
-    rows[0].appendChild(div);
+    parent.appendChild(div);
 
-    const author = document.createElement("div");
-    author.classList.add("book-author");
-    author.textContent = `${book.author}`;
-    
+    createBookTitle(div, bookNum);
+    createBookAuthor(bookObject, div);
+
+
+    adjustTitleFont(bookObject, document.querySelector(`.title-${bookNum}`), bookNum);
+
+}
+
+function createBookTitle(parent, bookNum)
+{
     const title = document.createElement("div");
     title.classList.add("book-title");
+    title.classList.add(`title-${bookNum}`);
 
-    div.appendChild(title);
-    div.appendChild(author);
+    parent.appendChild(title);
+}
 
-    let titleLetters = book.title.split('');
+function createBookAuthor(bookObject, parent)
+{
+    const author = document.createElement("div");
+    author.classList.add("book-author");
+    author.textContent = `${bookObject.author}`;
+
+    parent.appendChild(author);
+}
+
+function adjustTitleFont(bookObject, title, bookNum)
+{
+    let titleLetters = bookObject.title.split('');
     let size = titleLetters.length;
     let fontSize = (title.offsetHeight) / size;
 
@@ -107,8 +136,7 @@ for (const book of myLibrary) {
         letter.classList.add(`letter-${bookNum}`);
         letter.textContent = `${element}`;
         letter.style.fontSize = `${fontSize}px`;
-        
+            
         title.appendChild(letter);
     });
-    ++bookNum;
 }
