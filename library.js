@@ -84,7 +84,9 @@ for (const book of myLibrary) {
     let b = getRandomColorRGB();
     div.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 
-    
+    let height = getRandomNumRange(75, 100);
+    div.style.height = `${height}%`;
+
     
     rows[0].appendChild(div);
 }
