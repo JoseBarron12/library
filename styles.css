@@ -87,6 +87,7 @@ body {
     box-shadow: black 0px 0px 10px 10px inset;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+    align-items: end;
 }
 
 .book {

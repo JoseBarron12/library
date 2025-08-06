@@ -47,6 +47,19 @@ function getRandomColorRGB()
     return Math.floor(Math.random()* 255);
 }
 
+function getRandomNumRange(min, max)
+{ 
+    while ( true )
+    {
+        let num = Math.floor(Math.random() * max);
+        if (num > min)
+        {
+            return num;
+        }
+    }
+}
+
+
 const bookshelf = document.querySelector(".bookshelf");
 
 for (let i = 1; i < 5; i++)
@@ -70,7 +83,10 @@ for (const book of myLibrary) {
     let g = getRandomColorRGB();
     let b = getRandomColorRGB();
     div.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+    
     
     rows[0].appendChild(div);
 }
 
+console.log(getRandomNumRange(9,56));
