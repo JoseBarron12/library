@@ -140,3 +140,10 @@ function adjustTitleFont(bookObject, title, bookNum)
     });
 }
 
+const mascot = document.querySelector(".bookshelf > img");
+const header = document.querySelector(".library-header");
+console.log(mascot);
+
+mascot.addEventListener("click", () => {
+    header.style.color = "#6a5a48";
+});
