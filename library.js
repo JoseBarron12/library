@@ -87,9 +87,11 @@ for (const book of myLibrary) {
     rows[0].appendChild(div);
 
     const author = document.createElement("div");
+    author.classList.add("book-author");
     author.textContent = `${book.author}`;
     
     const title = document.createElement("div");
+    title.classList.add("book-title")
     title.textContent = `${book.title}`;
 
     div.appendChild(title);
