@@ -121,3 +121,11 @@ body {
 .book-title {
   justify-self: center;
 }
+
+.user-valid {
+  border-color: #00c896;
+}
+
+.user-invalid {
+  border-color: red;
+}

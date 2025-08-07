@@ -162,20 +162,46 @@ closeBtns.forEach((btn) => {
 
 confirmBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    
+
     let inputTitle = document.querySelector("#book_title");
     let inputAuthor = document.querySelector("#book_author");
     let inputPageNum = document.querySelector("#book_pages");
     let inputRead = document.querySelector("#read");
     let inputNotRead = document.querySelector("#not_read");
 
-    console.log(validInputText(inputTitle.value));
-    console.log(validInputText(inputAuthor.value));
+    inputTitle.classList.remove("user-valid");
+    inputTitle.classList.remove("user-invalid");
+
+    inputAuthor.classList.remove("user-valid");
+    inputAuthor.classList.remove("user-invalid");
+
+    if(validInputText(inputTitle.value))
+    {
+        inputTitle.classList.add("user-valid");
+        
+    }
+    else
+    {
+        inputTitle.classList.add("user-invalid");
+    }
+    
+    if(validInputText(inputAuthor.value))
+    {
+        inputAuthor.classList.add("user-valid");
+    }
+    else
+    {
+        inputAuthor.classList.add("user-invalid");
+    }
+
     console.log(inputPageNum.value);
     console.log(inputRead.checked);
     console.log(inputNotRead.checked);
 
-    addBookWindow.close();
+    if(validInputText(inputTitle.value) && validInputText(inputAuthor.value))
+    {
+        addBookWindow.close();
+    }
     
 });
 
