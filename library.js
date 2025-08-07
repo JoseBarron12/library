@@ -269,3 +269,14 @@ function displayBookInfo(bookObject, window)
     window.appendChild(pageInfo);
     window.appendChild(readInfo);
 }
+
+function getBookObject(id)
+{
+    for(const book of myLibrary)
+    {
+        if(book.id === id)
+        {
+            return book;
+        }
+    }
+}
