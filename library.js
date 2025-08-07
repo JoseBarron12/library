@@ -249,3 +249,23 @@ books.forEach((book) => {
         bookWindow.showModal();
     });
 });
+
+function displayBookInfo(bookObject, window)
+{
+    const titleInfo = document.createElement("div");
+    titleInfo.textContent = bookObject.title;
+
+    const authorInfo = document.createElement("div");
+    authorInfo.textContent = bookObject.author;
+
+    const pageInfo = document.createElement("div");
+    pageInfo.textContent = bookObject.pages;
+
+    const readInfo = document.createElement("div");
+    readInfo.textContent = bookObject.read;
+
+    window.appendChild(titleInfo);
+    window.appendChild(authorInfo);
+    window.appendChild(pageInfo);
+    window.appendChild(readInfo);
+}
