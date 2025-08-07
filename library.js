@@ -246,7 +246,9 @@ const bookWindow = document.querySelector(".book-window")
 
 books.forEach((book) => {
     book.addEventListener("click", () => {
-        bookWindow.showModal();
+        let id = book.getAttribute("id");
+        displayBookInfo(getBookObject(id), bookWindow);
+        bookWindow.showModal();    
     });
 });
 
@@ -268,6 +270,7 @@ function displayBookInfo(bookObject, window)
     window.appendChild(authorInfo);
     window.appendChild(pageInfo);
     window.appendChild(readInfo);
+
 }
 
 function getBookObject(id)
