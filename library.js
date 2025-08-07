@@ -220,8 +220,16 @@ confirmBtn.addEventListener("click", (event) => {
     {
         const book = new Book(inputTitle.value, inputAuthor.value, inputPageNum.value, read);
         addBookToLibrary(book);
-        console.log(myLibrary);
         displayNewBook(book);
+
+        inputTitle.value = "";
+        inputAuthor.value = "";
+        inputPageNum.value = 1;
+
+        inputTitle.classList.remove("user-valid");
+        inputAuthor.classList.remove("user-valid");
+        inputPageNum.classList.remove("user-valid");
+    
         addBookWindow.close();
     }
     
