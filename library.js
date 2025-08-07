@@ -142,7 +142,6 @@ function adjustTitleFont(bookObject, title, bookNum)
 
 const mascot = document.querySelector(".bookshelf > img");
 const header = document.querySelector(".library-header");
-console.log(mascot);
 
 const addBookWindow = document.querySelector("[closedby='any']");
 
