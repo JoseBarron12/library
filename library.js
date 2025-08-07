@@ -71,17 +71,27 @@ for (let i = 1; i < 5; i++)
 
 const rows = document.querySelectorAll(".bookshelf-row");
 
+let currentBookNum = 1;
+
 displayBooks();
 
 function displayBooks()
 {
     let bookNum = 1;
-    for (const book of myLibrary) {
-        
+    for (const book of myLibrary) 
+    {
         createBook(book, rows[0], bookNum);
         ++bookNum;
     }
+    currentBookNum = bookNum;
 }
+
+function displayNewBook(bookObject)
+{
+    createBook(bookObject, rows[0], currentBookNum);
+    ++currentBookNum;
+}
+
 
 function createBook(bookObject, parent, bookNum)
 {
@@ -149,7 +159,6 @@ const closeBtns = document.querySelectorAll(".close");
 const confirmBtn = document.querySelector(".confirm");
 
 
-
 mascot.addEventListener("click", () => {
     addBookWindow.showModal();
 });
@@ -212,6 +221,7 @@ confirmBtn.addEventListener("click", (event) => {
         const book = new Book(inputTitle.value, inputAuthor.value, inputPageNum.value, read);
         addBookToLibrary(book);
         console.log(myLibrary);
+        displayNewBook(book);
         addBookWindow.close();
     }
     
