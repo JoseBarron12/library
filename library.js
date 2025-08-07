@@ -172,8 +172,8 @@ confirmBtn.addEventListener("click", (event) => {
     console.log(validInputText(inputTitle.value));
     console.log(validInputText(inputAuthor.value));
     console.log(inputPageNum.value);
-    console.log(inputRead.value);
-    console.log(inputNotRead.value);
+    console.log(inputRead.checked);
+    console.log(inputNotRead.checked);
 
     addBookWindow.close();
     
