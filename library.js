@@ -246,6 +246,7 @@ const bookWindow = document.querySelector(".book-window")
 
 books.forEach((book) => {
     book.addEventListener("click", () => {
+        removeChildren(bookWindow);
         let id = book.getAttribute("id");
         displayBookInfo(getBookObject(id), bookWindow);
         bookWindow.showModal();    
@@ -283,3 +284,11 @@ function getBookObject(id)
         }
     }
 }
+
+function removeChildren(parent)
+{
+    let childs = parent.querySelectorAll("div");
+    childs.forEach(child => {
+        child.remove();
+    });
+}   
