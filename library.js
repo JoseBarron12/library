@@ -146,6 +146,7 @@ const header = document.querySelector(".library-header");
 const addBookWindow = document.querySelector("[closedby='any']");
 
 const closeBtns = document.querySelectorAll(".close");
+const confirmBtn = document.querySelector(".confirm");
 
 mascot.addEventListener("click", () => {
     addBookWindow.showModal();
@@ -155,4 +156,13 @@ closeBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
     btn.parentElement.close();
     })
+});
+
+confirmBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    let inputs = document.querySelectorAll("input");
+    inputs.forEach(input => {
+        console.log(input.value);
+    });
+    addBookWindow.close();
 })
