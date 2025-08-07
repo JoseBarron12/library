@@ -167,7 +167,6 @@ confirmBtn.addEventListener("click", (event) => {
     let inputAuthor = document.querySelector("#book_author");
     let inputPageNum = document.querySelector("#book_pages");
     let inputRead = document.querySelector("#read");
-    let inputNotRead = document.querySelector("#not_read");
 
     inputTitle.classList.remove("user-valid");
     inputTitle.classList.remove("user-invalid");
@@ -206,13 +205,13 @@ confirmBtn.addEventListener("click", (event) => {
         inputPageNum.classList.add("user-valid");
     }
 
-
-    console.log(inputPageNum.value);
-    console.log(inputRead.checked);
-    console.log(inputNotRead.checked);
+    let read = (inputRead.checked) ? true : false;
 
     if(validInputText(inputTitle.value) && validInputText(inputAuthor.value) && inputPageNum.value > 0)
     {
+        const book = new Book(inputTitle.value, inputAuthor.value, inputPageNum.value, read);
+        addBookToLibrary(book);
+        console.log(myLibrary);
         addBookWindow.close();
     }
     
