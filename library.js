@@ -148,6 +148,8 @@ const addBookWindow = document.querySelector("[closedby='any']");
 const closeBtns = document.querySelectorAll(".close");
 const confirmBtn = document.querySelector(".confirm");
 
+
+
 mascot.addEventListener("click", () => {
     addBookWindow.showModal();
 });
@@ -160,9 +162,24 @@ closeBtns.forEach((btn) => {
 
 confirmBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    let inputs = document.querySelectorAll("input");
-    inputs.forEach(input => {
-        console.log(input.value);
-    });
+    
+    let inputTitle = document.querySelector("#book_title");
+    let inputAuthor = document.querySelector("#book_author");
+    let inputPageNum = document.querySelector("#book_pages");
+    let inputRead = document.querySelector("#read");
+    let inputNotRead = document.querySelector("#not_read");
+
+    console.log(validInputText(inputTitle.value));
+    console.log(validInputText(inputAuthor.value));
+    console.log(inputPageNum.value);
+    console.log(inputRead.value);
+    console.log(inputNotRead.value);
+
     addBookWindow.close();
-})
+    
+});
+
+function validInputText(text)
+{
+    return (text !== "") ? true : false;
+}
