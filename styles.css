@@ -135,3 +135,8 @@ dialog {
   justify-self: center;
 }
   
+
+dialog::backdrop {
+  background-color: rgb(129, 128, 128);
+  opacity: 0.90;
+}
