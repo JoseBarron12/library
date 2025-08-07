@@ -153,7 +153,7 @@ function adjustTitleFont(bookObject, title, bookNum)
 const mascot = document.querySelector(".bookshelf > img");
 const header = document.querySelector(".library-header");
 
-const addBookWindow = document.querySelector("[closedby='any']");
+const addBookWindow = document.querySelector(".add-book-window");
 
 const closeBtns = document.querySelectorAll(".close");
 const confirmBtn = document.querySelector(".confirm");
@@ -242,8 +242,10 @@ function validInputText(text)
 
 const books = document.querySelectorAll(".book");
 
+const bookWindow = document.querySelector(".book-window")
+
 books.forEach((book) => {
     book.addEventListener("click", () => {
-        book.style.color = "white";
+        bookWindow.showModal();
     });
 });
