@@ -175,6 +175,9 @@ confirmBtn.addEventListener("click", (event) => {
     inputAuthor.classList.remove("user-valid");
     inputAuthor.classList.remove("user-invalid");
 
+    inputPageNum.classList.remove("user-valid");
+    inputPageNum.classList.remove("user-invalid");
+
     if(validInputText(inputTitle.value))
     {
         inputTitle.classList.add("user-valid");
@@ -194,11 +197,21 @@ confirmBtn.addEventListener("click", (event) => {
         inputAuthor.classList.add("user-invalid");
     }
 
+    if(inputPageNum.value <= 0)
+    {
+        inputPageNum.classList.add("user-invalid");
+    }
+    else
+    {
+        inputPageNum.classList.add("user-valid");
+    }
+
+
     console.log(inputPageNum.value);
     console.log(inputRead.checked);
     console.log(inputNotRead.checked);
 
-    if(validInputText(inputTitle.value) && validInputText(inputAuthor.value))
+    if(validInputText(inputTitle.value) && validInputText(inputAuthor.value) && inputPageNum.value > 0)
     {
         addBookWindow.close();
     }
