@@ -239,3 +239,11 @@ function validInputText(text)
 {
     return (text !== "") ? true : false;
 }
+
+const books = document.querySelectorAll(".book");
+
+books.forEach((book) => {
+    book.addEventListener("click", () => {
+        book.style.color = "white";
+    });
+});
