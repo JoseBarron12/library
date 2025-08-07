@@ -144,6 +144,16 @@ const mascot = document.querySelector(".bookshelf > img");
 const header = document.querySelector(".library-header");
 console.log(mascot);
 
+const addBookWindow = document.querySelector("[closedby='any']");
+
+const closeBtns = document.querySelectorAll(".close");
+
 mascot.addEventListener("click", () => {
-    header.style.color = "#6a5a48";
+    addBookWindow.showModal();
 });
+
+closeBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+    btn.parentElement.close();
+    })
+})
